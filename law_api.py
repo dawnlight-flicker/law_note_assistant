@@ -4,6 +4,7 @@ import dashscope
 from dashscope import Generation
 import json  # 补充导入
 import re    # 也可以放在顶部
+import os
 
 import dashscope
 from dashscope import Generation
@@ -13,9 +14,9 @@ import re
 
 def get_article_text(keyword, law_name="民法典"):
     """单独获取法条原文"""
-    dashscope.api_key = "sk-ade6bfad3da64539b5273a95689729b5"
-    # 替换成你在控制台找到的实际Workspace ID
-    dashscope.workspace = "ws-gdl411633s9ymfim.cn-beijing.maas.aliyuncs.com"
+
+
+    dashscope.api_key = os.environ.get("DASHSCOPE_API_KEY", "your-key-here")
 
 
     prompt = f"请直接输出{law_name}第{keyword}条的原文内容，不需要任何解释。"
@@ -36,9 +37,8 @@ def get_article_text(keyword, law_name="民法典"):
 
 def get_judicial_interpretations(keyword, law_name="民法典"):
     """单独获取司法解释"""
-    dashscope.api_key = "sk-ade6bfad3da64539b5273a95689729b5"
-    # 替换成你在控制台找到的实际Workspace ID
-    dashscope.workspace = "ws-gdl411633s9ymfim.cn-beijing.maas.aliyuncs.com"
+
+    dashscope.api_key = os.environ.get("DASHSCOPE_API_KEY", "your-key-here")
 
 
     prompt = f"请列出与{law_name}第{keyword}条相关的所有司法解释，每条请给出标题和简要内容。如果没有相关司法解释，请返回'暂无'。"
@@ -71,9 +71,9 @@ def get_judicial_interpretations(keyword, law_name="民法典"):
 
 def get_exam_points(keyword, law_name="民法典"):
     """单独获取考点解析"""
-    dashscope.api_key = "sk-ade6bfad3da64539b5273a95689729b5"
-    # 替换成你在控制台找到的实际Workspace ID
-    dashscope.workspace = "ws-gdl411633s9ymfim.cn-beijing.maas.aliyuncs.com"
+   
+
+    dashscope.api_key = os.environ.get("DASHSCOPE_API_KEY", "your-key-here")
 
 
     prompt = f"请列出{law_name}第{keyword}条在法律硕士考试中的常见考点，返回一个列表。如果没有常见考点，请返回'暂无'。"

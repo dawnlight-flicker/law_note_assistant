@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.env
+.venv
+venv/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# 可执行文件
+*.exe
+
+# IDE
+.idea/
+.vscode/
+
+# 数据文件（如果包含隐私，取消注释）
+# data.json
+
+# API 密钥文件（如果有单独文件）
+# api_key.txt
